@@ -1,0 +1,12 @@
+*.aps
+*.exe
+*.ncb
+*.obj
+*.opensdf
+*.sdf
+*.suo
+*.user
+Debug/
+Release/
+ipch/
+x64/
