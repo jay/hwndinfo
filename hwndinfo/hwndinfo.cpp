@@ -303,7 +303,7 @@ void hwndinfo(HWND hwnd, DWORD dwFlags = 0)
 
 #define EXTRACT_GTI_FLAG(f) \
   if((flags & f)) { \
-    if(ss.tellp()) \
+    if(ss.tellp() > 0) \
       ss << " | "; \
     ss << #f; \
     flags &= ~f; \
@@ -315,11 +315,11 @@ void hwndinfo(HWND hwnd, DWORD dwFlags = 0)
         EXTRACT_GTI_FLAG(GUI_POPUPMENUMODE);
         EXTRACT_GTI_FLAG(GUI_SYSTEMMENUMODE);
         if(flags) {
-          if(ss.tellp())
+          if(ss.tellp() > 0)
             ss << " | ";
           ss << "0x" << hex << flags;
         }
-        if(!ss.tellp())
+        if(ss.tellp() <= 0)
           ss << "<none>";
         cout << "guithreadinfo.flags: " << ss.str() << endl;
 
