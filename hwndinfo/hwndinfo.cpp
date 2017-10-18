@@ -277,6 +277,7 @@ void hwndinfo(HWND hwnd, DWORD dwFlags = 0)
 
     PRINTBOOL(IsIconic(hwnd));
     PRINTBOOL(IsZoomed(hwnd));
+    PRINTBOOL(IsWindowEnabled(hwnd));
     PRINTBOOL(IsWindowVisible(hwnd));
 
     if((dwFlags & INFO_BRIEF))
